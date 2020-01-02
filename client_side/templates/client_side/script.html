@@ -1,0 +1,10 @@
+{% load static %}
+
+    {% if ie_condition %}
+        <!--[if {{ ie_condition }}]>
+    {% endif %}
+    <script src="{% if script.static %}{% static script.url %}{% else %}{{ script.url }}{% endif %}" {% if script.sri %}integrity="{{ script.sri }}"{% endif %} {% if not script.static %}crossorigin="anonymous"{% endif %}>
+    </script>
+    {% if ie_condition %}
+        <![endif]-->
+    {% endif %}

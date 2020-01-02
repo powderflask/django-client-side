@@ -1,0 +1,5 @@
+/* Custom shims for IE8 and lower */
+
+.footer {
+  filter:Alpha(opacity=50);
+}

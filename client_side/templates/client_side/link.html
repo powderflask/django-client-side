@@ -1,0 +1,9 @@
+{% load static %}
+
+    {% if ie_condition %}
+        <!--[if {{ ie_condition }}]>
+    {% endif %}
+    <link href="{% if link.static %}{% static link.url %}{% else %}{{ link.url }}{% endif %}" rel="stylesheet" {% if link.sri %}integrity="{{ link.sri }}"{% endif %} {% if not link.static %}crossorigin="anonymous"{% endif %}>
+    {% if ie_condition %}
+        <![endif]-->
+    {% endif %}
