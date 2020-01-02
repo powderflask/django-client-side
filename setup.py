@@ -1,7 +1,8 @@
 import sys, os
 
-from setuptools import setup, Command
+from setuptools import setup, find_packages, Command
 from setuptools.command.test import test
+import version
 
 class CleanCommand(Command):
     """Custom clean command to tidy up the project root."""
@@ -38,8 +39,9 @@ Use any client-side framework or none.  Demo app uses npm as JS package manager 
 
 setup(
     name='django-client-side',
-    version='0.1.0',
-    packages=['client_side', ],
+    version=version.__version__,
+    packages=find_packages(exclude=('demo', 'demo.*')),
+    python_requires=">=3.6",
     license='MIT',
     include_package_data = True,
     description='Simple client-side dependency management for your django project.',
