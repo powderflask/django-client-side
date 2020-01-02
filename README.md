@@ -38,10 +38,11 @@ Quick start
 
  2) define client-side dependency set (see `demo.dependencies` for example)
  
- 3) in settings.py, set:
+ 3) in settings.py, configure `CLIENT_SIDE_DEPENDENCIES` setting:
     ```
-    CLIENT_SIDE_DEPENDENCIES = myproject.client_side.dependencies.DEPENDENCIES  # your dependency sets
+    CLIENT_SIDE_DEPENDENCIES = 'myproject.client_side.dependencies.DEPENDENCIES'  # dotted-path to your dependency sets
     ```
+    (may be a dotted-path to a dict or specify the dependency set dict directly in settings.)
  4) Use `{% stylesheet <name> %}`  and  `{% javascript <name> %}` in your templates to pull in sets of dependencies
  
  5) Update your client-side dependency sets any time without ever touching your templates! 

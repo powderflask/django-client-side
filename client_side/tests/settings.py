@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from . import dependencies
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -122,4 +121,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Point this setting at your dependency sets dict, whereever that may live.
-CLIENT_SIDE_DEPENDENCIES = dependencies.DEPENDENCIES
+CLIENT_SIDE_DEPENDENCIES = 'client_side.tests.dependencies.DEPENDENCIES'

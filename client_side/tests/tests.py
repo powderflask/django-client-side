@@ -1,8 +1,25 @@
 from importlib import reload
-from django.conf import settings
+from django.core import exceptions
 from django.test.utils import override_settings
 from django.test import TestCase
 from client_side.templatetags import dependency_tags
+from client_side.tests import dependencies
+
+class TestGetDependencySets(TestCase):
+
+    @override_settings(CLIENT_SIDE_DEPENDENCIES='client_side.tests.dependencies.DEPENDENCIES')
+    def test_dotted_path(self):
+        dep = dependency_tags.get_dependency_sets()
+        self.assertEqual(dep, dependencies.DEPENDENCIES)
+
+    @override_settings(CLIENT_SIDE_DEPENDENCIES={'key': 'value'})
+    def test_dictionary(self):
+        dep = dependency_tags.get_dependency_sets()
+        self.assertEqual(dep, {'key': 'value'})
+
+    @override_settings(CLIENT_SIDE_DEPENDENCIES='dependencies')
+    def test_improperly_configured(self):
+        self.assertRaises(exceptions.ImproperlyConfigured, dependency_tags.get_dependency_sets)
 
 
 @override_settings(DEBUG=False)
