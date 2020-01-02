@@ -39,18 +39,18 @@ Use any client-side framework or none.  Demo app uses npm as JS package manager 
 
 setup(
     name='django-client-side',
-    version=version.__version__,
-    packages=find_packages(exclude=('demo', 'demo.*')),
-    python_requires=">=3.6",
-    license='MIT',
-    include_package_data = True,
     description='Simple client-side dependency management for your django project.',
     long_description=LONG_DESCRIPTION,
+    license='MIT',
     author='powderflask',
     author_email='powderflask@gmail.com',
     maintainer='powderflask',
     maintainer_email='powderflask@gmail.com',
     url='https://github.com/powderflask/django-client-side',
+    version=version.__version__,
+    packages=find_packages(exclude=('demo', 'demo.*')),
+    package_data = {'': ['templates/client_side/*',] },
+    python_requires=">=3.6",
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
