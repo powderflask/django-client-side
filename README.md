@@ -2,18 +2,19 @@
 
 Manage client-side JS / CSS dependencies for your django project.
 
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: powderflask
  * Author URI: https://github.com/powderflask/django-client-side
  * License: MIT  see LICENSE
 
 OVERVIEW:
 --------
- * Keep and update client-side dependencies in one place (e.g., not scattered in templates).
- * Provides executable client-side app dependencies set.
+ * Maintain client-side dependencies in one place (i.e., not scattered in templates).
+ * Provides testable, executable client-side app dependencies set.
  * Template tags used to pull JS / CSS dependencies into templates.
  * Local static resources and/or from CDN. 
- * Use any client-side build toos or none - demo app uses npm as JS package manager and build tool.
+ * Use any client-side build tools or none - demo app uses npm as JS package manager and build tool.
+ * conditional dependencies for different build environments
 
 Dependencies:
  * python 3
