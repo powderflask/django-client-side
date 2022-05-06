@@ -22,13 +22,17 @@ class TestGetDependencySets(TestCase):
         self.assertRaises(exceptions.ImproperlyConfigured, dependency_tags.get_dependency_sets)
 
 
-@override_settings(DEBUG=False)
-class TestTemplateTags(TestCase):
-
+class DependencyTestMixin(TestCase):
+    """ Reload values based on overridden settings values """
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        reload(dependencies)
         reload(dependency_tags)
+
+
+@override_settings(DEBUG=False)
+class TestTemplateTags(DependencyTestMixin, TestCase):
 
     def test_stylesheet_tag(self):
         links = dependency_tags.stylesheet('core')
@@ -45,20 +49,8 @@ class TestTemplateTags(TestCase):
         self.assertNotIn('https://example.com/hijack.js', scripts)
 
 
-    def test_ie_conditional_shims(self):
-        scripts = dependency_tags.javascript('shims')
-        self.assertIn('<!--[if lt IE 9]>', scripts)
-        self.assertIn('https://somecdn.com/html5shiv.min.js', scripts)
-        self.assertIn('<![endif]-->', scripts)
-
-
 @override_settings(DEBUG=True)
-class TestDebugDependencies(TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        reload(dependency_tags)
+class TestDebugDependencies(DependencyTestMixin, TestCase):
 
     def test_stylesheet_tag(self):
         links = dependency_tags.stylesheet('core')
@@ -70,12 +62,7 @@ class TestDebugDependencies(TestCase):
 
 
 @override_settings(ENABLE_HIJACK=True)
-class TestConditionalDependencies(TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        reload(dependency_tags)
+class TestConditionalDependencies(DependencyTestMixin, TestCase):
 
     def test_stylesheet_tag(self):
         links = dependency_tags.stylesheet('core')
