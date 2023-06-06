@@ -1,0 +1,2 @@
+{% load static %}
+<link href="{% if static %}{% static url %}{% else %}{{ url }}{% endif %}" rel="stylesheet" {% if sri %}integrity="{{ sri }}"{% endif %} {% if not static %}crossorigin="anonymous"{% endif %}>
