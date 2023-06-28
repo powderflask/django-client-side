@@ -2,8 +2,9 @@ from importlib import reload
 from django.core import exceptions
 from django.test.utils import override_settings
 from django.test import TestCase
-from client_side.templatetags import dependency_tags
-from client_side.tests import dependencies
+from django_client_side.client_side import dependency_tags
+from django_client_side.client_side import dependencies
+
 
 class TestGetDependencySets(TestCase):
 
@@ -43,7 +44,6 @@ class TestTemplateTags(TestCase):
         self.assertIn('sha384-js-sri-here', scripts)
         self.assertIn('lib/common.min.js', scripts)
         self.assertNotIn('https://example.com/hijack.js', scripts)
-
 
     def test_ie_conditional_shims(self):
         scripts = dependency_tags.javascript('shims')

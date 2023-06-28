@@ -36,6 +36,6 @@ def run_tests():
     from django.test.utils import get_runner
 
     django.setup()
-    runner = get_runner(settings,"django.test.runner.DiscoverRunner")
+    runner = get_runner(settings, "django.test.runner.DiscoverRunner")
     test_suite = runner(verbosity=2, interactive=True, failfast=False)
     return test_suite.run_tests(['client_side', ])
