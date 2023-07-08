@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 # django-sample-app - A Django app with setup, unittests, docs and demo
 # Copyright (C) 2013,  Daniel Rus Morales
@@ -18,7 +18,8 @@
 
 import os
 import sys
-import unittest
+
+# import unittest
 
 
 def setup_django_settings():
@@ -38,4 +39,8 @@ def run_tests():
     django.setup()
     runner = get_runner(settings, "django.test.runner.DiscoverRunner")
     test_suite = runner(verbosity=2, interactive=True, failfast=False)
-    return test_suite.run_tests(['client_side', ])
+    return test_suite.run_tests(
+        [
+            "client_side",
+        ]
+    )

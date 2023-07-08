@@ -14,37 +14,37 @@ from tests.component import DependencySets, Component, Script, Stylesheet
 #   See https://www.srihash.org for info on how to generate the hashes
 jquery = Component(
     Script(
-        url='https://code.jquery.com/jquery-3.3.1.min.js',
-        sri='sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT'
+        url="https://code.jquery.com/jquery-3.3.1.min.js",
+        sri="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT",
     )
 )
 bootstrap = Component(
     Script(
-        url='https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
-        sri='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa'
+        url="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",
+        sri="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa",
     ),
     Stylesheet(
-        url='https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        sri='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u'
-    )
+        url="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+        sri="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u",
+    ),
 )
 
 font_antic = Component(
     Stylesheet(
-        url='https://fonts.googleapis.com/css?family=Antic',
+        url="https://fonts.googleapis.com/css?family=Antic",
         # sri='sha384-zeTATX9tcOoWjsNYmOyWx2/GBjEpUSA7iELDKZ/ak4RswWZBkKsSVzHutF4kEXl4'  # Causes much weirdness?
     )
 )
 
 # bundled JS libraries
 lib_common = Component(  # common 3rd party libraries.  Build > npm run build:lib
-    Script(url='lib/common.js' if settings.DEBUG else 'lib/common.min.js', static=True),
-    Stylesheet(url='lib/common.min.css', static=True),
+    Script(url="lib/common.js" if settings.DEBUG else "lib/common.min.js", static=True),
+    Stylesheet(url="lib/common.min.css", static=True),
 )
 
 # Named, ordered dependency groups.
 DEPENDENCIES = DependencySets(
-    core     = (jquery, bootstrap, lib_common, font_antic),
-    shims    = (),
-    pdf      = (bootstrap, font_antic),
+    core=(jquery, bootstrap, lib_common, font_antic),
+    shims=(),
+    pdf=(bootstrap, font_antic),
 )
