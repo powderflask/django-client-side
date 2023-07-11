@@ -16,7 +16,7 @@ class HtmlTag:
     def __init__(self, url, **context):
         """ depdendency url and tag template context, eg., sri, static, etc. """
         self.context = {
-            'url': url,
+            'url' : url,
             **context
         }
 
