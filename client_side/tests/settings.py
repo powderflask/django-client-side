@@ -120,5 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Point this setting at your dependency sets dict, whereever that may live.
+# Point this setting at your dependency sets dict, wherever that may live.
 CLIENT_SIDE_DEPENDENCIES = 'client_side.tests.dependencies.DEPENDENCIES'
