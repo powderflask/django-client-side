@@ -1,5 +1,5 @@
 # History
 
-## 0.1.0 (2023-06-27)
+## 0.2.0 (2023-07-11)
 
 - First release on PyPI.

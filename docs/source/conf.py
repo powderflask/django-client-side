@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Django Client Side'
-copyright = '2018, powderflask'
+copyright = '2023, powderflask'
 author = 'powderflask'
 master_doc = 'index'
 source_suffix = ['.rst', '.md']
