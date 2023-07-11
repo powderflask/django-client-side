@@ -4,8 +4,8 @@ from django.conf import settings
 from django.core import exceptions
 from django.utils.safestring import mark_safe
 from django import template
-from client_side.component import Script, Stylesheet, DependencySets
 register = template.Library()
+from client_side.component import Script, Stylesheet
 
 
 def get_dependency_sets(client_side_dependencies=None):
