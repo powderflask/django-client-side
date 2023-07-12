@@ -1,3 +1,0 @@
-{% load static %}
-<script src="{% if static %}{% static url %}{% else %}{{ url }}{% endif %}" {% if sri %}integrity="{{ sri }}"{% endif %} {% if not static %}crossorigin="anonymous"{% endif %}>
-</script>

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "gzo$0pwv4a(v(8!d$l!yr9ht0sz69$p^$=%i_+n%v334yp%_w*"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "client_side",
+    "demo",
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "client_side.tests.urls"
+ROOT_URLCONF = "demo.urls"
 
 TEMPLATES = [
     {
@@ -120,7 +121,5 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-# Point this setting at your dependency sets dict, wherever that may live.
-CLIENT_SIDE_DEPENDENCIES = "client_side.tests.dependencies.DEPENDENCIES"
-
-ENABLE_HIJACK = False
+# Point this setting at your dependency sets dict, whereever that may live.
+CLIENT_SIDE_DEPENDENCIES = "demo.client_side.dependencies.DEPENDENCIES"
