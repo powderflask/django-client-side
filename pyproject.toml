@@ -46,7 +46,6 @@ test = [
     "pytest-sugar",
 ]
 utils = [
-    "tomli; python_version < '3.11'",
     "invoke",
     "bumpver",
     "build",
@@ -79,8 +78,8 @@ push = true
 [tool.bumpver.file_patterns]
 "pyproject.toml" = ['version = "{version}"']
 "README.md" = ['Version: {version}']
-"django_client_side/__init__.py" = ['__version__ = "{version}"']
-"docs/sphinx/conf.py" = ["release = '{version}'"]
+"client_side/__init__.py" = ['__version__ = "{version}"']
+"docs/source/conf.py" = ["version = '{version}'", "release = '{version}'"]
 
 [tool.black]
 target-version = ["py37","py38","py39","py310","py311"]
