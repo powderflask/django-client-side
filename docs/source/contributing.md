@@ -112,7 +112,7 @@ To run a subset of tests:
 ``` shell
 ```
 
-> \$ pytest [tests.test]()django_client_side
+> \$ pytest [tests.test](django_client_side)
 
 
 

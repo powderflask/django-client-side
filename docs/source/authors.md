@@ -2,7 +2,7 @@
 
 ## Development Lead
 
-- [powderflask](powderflask@gmail.com)
+- [powderflask](https://github.com/powderflask)
 
 ## Contributors
 

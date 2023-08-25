@@ -4,9 +4,8 @@
 :maxdepth: 2
 :caption: "Contents:"
 
-../README
-
-../CONTRIBUTING
-../HISTORY
-# insert other content pages here
+readme_ref
+authors
+contributing
+history
 ```
