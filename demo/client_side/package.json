@@ -14,7 +14,7 @@
     "npm-run-all": "^4.1.2",
     "opener": "^1.4.0",
     "rimraf": "^2.2.8",
-    "wait-on": "^2.1.0",
+    "wait-on": "^7.0.1",
     "watchify": "^3.11.1"
   },
   "dependencies": {
