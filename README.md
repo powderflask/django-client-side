@@ -20,8 +20,6 @@ Dependencies:
  * python 3
  * django 2
 
-< Detailed documentation is in the "docs" directory. > (TODO)
-
 
 Quick start
 -----------
