@@ -2,12 +2,9 @@ name: Test with pytest
 
 on:
   push:
-    branches:
-      - develop
+    branches: [ "master", "devel" ]
   pull_request:
-    branches:
-      - master
-      - main
+    types: ["opened", "reopened"]
 
 jobs:
   build:

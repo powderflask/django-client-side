@@ -52,12 +52,6 @@ class TestTemplateTags(TestCase):
         self.assertIn("lib/common.min.js", scripts)
         self.assertNotIn("https://example.com/hijack.js", scripts)
 
-    # def test_ie_conditional_shims(self):
-    #     scripts = dependency_tags.javascript('shims')
-    #     self.assertIn('<!--[if lt IE 9]>', scripts)
-    #     self.assertIn('https://somecdn.com/html5shiv.min.js', scripts)
-    #     self.assertIn('<![endif]-->', scripts)
-
 
 @override_settings(DEBUG=True)
 class TestDebugDependencies(TestCase):

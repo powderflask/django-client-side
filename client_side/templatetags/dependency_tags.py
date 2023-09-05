@@ -5,6 +5,7 @@ from django import template
 from django.conf import settings
 from django.core import exceptions
 from django.utils.safestring import mark_safe
+
 from client_side.component import Script, Stylesheet
 
 register = template.Library()

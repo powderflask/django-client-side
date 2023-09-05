@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "django_client_side"
 version = "0.2.0"
-requires-python = ">=3.7, <4.0"
+requires-python = ">=3.8, <4.0"
 description = "Simple client-side dependency management for your django project."
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -19,7 +19,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
     "Natural Language :: English",
-    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
     "Framework :: Django",
 ]
 dependencies = [
@@ -50,6 +50,7 @@ utils = [
     "bumpver",
     "build",
     "twine",
+    "pip-tools",
 ]
 
 [project.urls]
@@ -79,10 +80,9 @@ push = true
 "pyproject.toml" = ['version = "{version}"']
 "README.md" = ['Version: {version}']
 "client_side/__init__.py" = ['__version__ = "{version}"']
-"docs/source/conf.py" = ["version = '{version}'", "release = '{version}'"]
 
 [tool.black]
-target-version = ["py37","py38","py39","py310","py311"]
+target-version = ["py38","py39","py310","py311"]
 
 [tool.isort]
 profile = "black"

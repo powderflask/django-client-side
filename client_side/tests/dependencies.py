@@ -25,7 +25,7 @@ lib_common = Component(
 )
 
 # Named, ordered dependency sets.
-# This dictionary is the value of settings.CLIENT_SIDE_DEPENDENCIES
+# This object is the value of settings.CLIENT_SIDE_DEPENDENCIES
 DEPENDENCIES = DependencySets(
     core=(component, hijack, lib_common),
 )
