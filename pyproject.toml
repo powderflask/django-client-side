@@ -27,11 +27,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-docs = [
-    "sphinx",
-    "sphinx-rtd-theme",
-    "myst-parser",
-]
 style = [
     "black",
     "isort",
@@ -66,7 +61,7 @@ Repository = "https://github.com/powderflask/django_client_side"
 include-package-data = true  # True by default, declarations in MANIFEST.in
 
 [tool.setuptools.packages.find]
-include = ["django_client_side", "django_client_side.*"]
+include = ["client_side", "client_side.*"]
 
 [tool.bumpver]
 current_version = "0.3.0"
