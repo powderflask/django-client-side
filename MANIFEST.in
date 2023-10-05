@@ -1,7 +1,6 @@
 include README.md
 include LICENSE
 
-recursive-include tests *
 recursive-include client_side/templates *
 recursive-include client_side/static *
 

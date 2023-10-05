@@ -5,13 +5,11 @@ from django.test import TestCase
 from django.test.utils import override_settings
 
 from client_side.templatetags import dependency_tags
-from client_side.tests import dependencies
+from tests import dependencies
 
 
 class TestGetDependencySets(TestCase):
-    @override_settings(
-        CLIENT_SIDE_DEPENDENCIES="client_side.tests.dependencies.DEPENDENCIES"
-    )
+    @override_settings(CLIENT_SIDE_DEPENDENCIES="tests.dependencies.DEPENDENCIES")
     def test_dotted_path(self):
         dep = dependency_tags.get_dependency_sets()
         self.assertEqual(dep, dependencies.DEPENDENCIES)
