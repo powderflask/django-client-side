@@ -49,7 +49,7 @@ utils = [
 ]
 
 [project.urls]
-Homepage = "hhttps://github.com/powderflask/django-client-side"
+Homepage = "https://github.com/powderflask/django-client-side"
 Repository = "https://github.com/powderflask/django-client-side"
 
 [project.scripts]

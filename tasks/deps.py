@@ -2,30 +2,44 @@ from invoke import task
 
 
 @task
-def pin(c, optional=False):
-    """ Pin all core [and optional] dependencies from pyproject.toml """
+def compile(c, upgrade=False, extras=(), output_file="requirements.txt", options=''):
+    """ Run pip-compile with given CLI options """
+    extras = ' '.join(f"--extra={e}" for e in extras)
+    upgrade = '--upgrade' if upgrade else ''
+    c.run(f"pip-compile --resolver=backtracking {upgrade} { extras } {options} -o { output_file } pyproject.toml")
+
+
+@task
+def compile_dev(c, upgrade=False, extras=(), output_file="requirements_dev.txt", options=''):
+    """ pip-compile Dev requirements """
+    compile(c, upgrade=upgrade, extras=extras, output_file=output_file, options='--all-extras ' + options)
+
+
+@task
+def pin(c, dev=False):
+    """ Pin all core [and development] dependencies from pyproject.toml """
     print("Generating requirements files...")
-    c.run("pip-compile --resolver=backtracking -o requirements.txt pyproject.toml")
-    if optional:
-        c.run("pip-compile --resolver=backtracking --all-extras -o requirements_dev.txt pyproject.toml")
+    compile(c)
+    if dev:
+        compile_dev(c)
     print("Done.")
 
 
 @task
-def upgrade(c, optional=False):
+def upgrade(c, dev=False):
     """ Force update all core [and optional] dependencies in requirements files """
     print("Updating requirements files...")
-    c.run("pip-compile --resolver=backtracking --upgrade -o requirements.txt pyproject.toml")
-    if optional:
-        c.run("pip-compile --resolver=backtracking --all-extras --upgrade -o requirements_dev.txt pyproject.toml")
+    compile(c, upgrade=True)
+    if dev:
+        compile_dev(c, upgrade=True)
     print("Done.")
 
 
 @task
-def install(c, optional=False):
+def install(c, dev=False):
     """ Install all core [and optional] dependencies """
     print("Installing dependencies...")
     c.run("pip-sync requirements.txt")
-    if optional:
+    if dev:
         c.run("pip-sync requirements_dev.txt")
     print("Done.")
