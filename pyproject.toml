@@ -13,7 +13,7 @@ license = {file = "LICENSE"}
 authors = [
     { name = "powderflask", email = "powderflask@gmail.com" }
 ]
-keywords = ["django_client_side",]
+keywords = ["django-client-side",]
 classifiers = [
     "Development Status :: 4 - Beta",
     "License :: OSI Approved :: MIT License",
