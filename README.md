@@ -8,7 +8,7 @@
 
 Manage client-side JS / CSS dependencies for your django project.
 
- * Version: 0.3.0
+ * Version: 0.3.1
  * Author: powderflask
  * Source: https://github.com/powderflask/django-client-side
  * [MIT License](https://github.com/powderflask/django-client-side/blob/master/LICENSE)
