@@ -44,7 +44,7 @@ coverage[toml]==7.2.7
     # via pytest-cov
 distlib==0.3.6
     # via virtualenv
-django==4.2.3
+django==4.2.7
     # via django-client-side (pyproject.toml)
 docutils==0.18.1
     # via

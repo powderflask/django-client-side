@@ -6,7 +6,7 @@
 #
 asgiref==3.7.2
     # via django
-django==4.2.3
+django==4.2.7
     # via django-client-side (pyproject.toml)
 sqlparse==0.4.4
     # via django
